@@ -1,3 +1,7 @@
+The solution code is explained in the comments of the R script.
+--------------------------------------------------------------------------------------------------------------------------
+
+
 # Getting-and-Cleaning-Data-Course-Project
 Data Science Coursera John Hopkins University. Course: Getting and Cleaning Data Course. Final Project.
 
@@ -33,4 +37,4 @@ You should create one R script called run_analysis.R that does the following.
     
  ---------------------------------------------------------------------------------------------------------------------------------
  
- The code is explain in the comment of the R script.
+ The solution code is explained in the comments of the R script.

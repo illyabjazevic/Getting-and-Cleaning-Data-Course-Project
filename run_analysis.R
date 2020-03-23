@@ -9,8 +9,7 @@
 #In your R working directory
 
 #STEP 4
-#You need to install the data.table package.
-#If you do not have use
+#You need to install the data.table package if you do not have it using 
 #install.packages("data.table")
 
 #STEP 5 
@@ -82,7 +81,7 @@ reducedDATAFRAME[,2] <- activityNAMES[reducedDATAFRAME[,2]]
 View(reducedDATAFRAME)
 
 #STEP 10
-# We need to change the names of the columns of our dataframe named reducedDATAFRAMES
+# We need to change the names of the columns of our reducedDATAFRAMES
 # using the information that is 
 # in the file
 # features_info.txt
@@ -110,6 +109,10 @@ newCOLUMNSnames <- gsub("meanFreq", "mean_frequency", newCOLUMNSnames)
 newCOLUMNSnames <- gsub("std", "standard_deviation", newCOLUMNSnames)
 View(newCOLUMNSnames)
 
+write.table(x = newCOLUMNSnames, 
+            file = "newCOLUMNSnames.txt", 
+            row.names = FALSE)
+
 names(reducedDATAFRAME) <- newCOLUMNSnames
 View(reducedDATAFRAME)
 
@@ -121,7 +124,7 @@ View(reducedDATAFRAME)
 # Using the write.table function
 
 dataBYsubjectDATAFRAME <- aggregate(reducedDATAFRAME[,3:81], 
-by = list(activities = reducedDATAFRAME$activities, subject = reducedDATAFRAME$subject),
+by = list(subject = reducedDATAFRAME$subject, activities = reducedDATAFRAME$activities),
 FUN = mean, 
 na.rm = TRUE)
 View(dataBYsubjectDATAFRAME)
@@ -144,3 +147,4 @@ View(summaryDATAFRAME)
 write.table(x = summaryDATAFRAME, 
 file = "summaryDATAFRAME.txt", 
 row.names = FALSE)
+
